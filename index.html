@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>COMING SOON</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    /* Reset and center everything */
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      background: linear-gradient(135deg, #0f2027, #2c5364, #00c6fb, #005bea 90%);
+      min-height: 100vh;
+      width: 100vw;
+      overflow: hidden;
+    }
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      font-family: 'Montserrat', Arial, sans-serif;
+      position: relative;
+    }
+    .container {
+      text-align: center;
+      z-index: 1;
+    }
+    .coming-soon {
+      font-size: 4rem;
+      font-weight: 900;
+      letter-spacing: .15em;
+      background: linear-gradient(90deg, #ffdf00, #fd5e53, #17ead9, #6078ea);
+      background-size: 300% 300%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: gradient-move 3s ease-in-out infinite alternate;
+      margin-bottom: 30px;
+      text-shadow: 0 8px 32px rgba(0,0,0,0.4);
+      user-select: none;
+    }
+
+    @keyframes gradient-move {
+      0% { background-position: 0% 50%;}
+      100% { background-position: 100% 50%;}
+    }
+
+    /* Cool animated loader */
+    .loader {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+      margin-top: 32px;
+    }
+    .dot {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #ffdf00 40%, #fd5e53 100%);
+      animation: bounce 1s infinite alternate;
+    }
+    .dot:nth-child(2) {
+      animation-delay: .2s;
+      background: linear-gradient(135deg, #fd5e53 40%, #17ead9 100%);
+    }
+    .dot:nth-child(3) {
+      animation-delay: .4s;
+      background: linear-gradient(135deg, #17ead9 40%, #6078ea 100%);
+    }
+    @keyframes bounce {
+      0% { transform: translateY(0);}
+      100% { transform: translateY(-24px);}
+    }
+
+    /* Responsive */
+    @media (max-width: 480px) {
+      .coming-soon {
+        font-size: 2.2rem;
+      }
+      .dot {
+        width: 12px;
+        height: 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="coming-soon">COMING SOON</div>
+    <div class="loader">
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+    </div>
+  </div>
+</body>
+</html>
